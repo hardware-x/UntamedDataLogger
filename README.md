@@ -58,8 +58,7 @@ See the `/images` folder for setup examples, internal wiring, and field deployme
 
 ## 🔐 License
 
-This project is proprietary to HardwareX Engineering LTD.  
-Please contact us if you're interested in collaboration or open-source licensing options.
+This project is licensed under the **MIT License**. See the `LICENSE` file for full terms.
 
 ---
 
