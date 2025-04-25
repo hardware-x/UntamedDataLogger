@@ -1,6 +1,6 @@
 # UNTAMED Embedded Firmware
 
-**Project UNTAMED** is an environmental and motion monitoring system developed by HardwareX Engineering for the "CrazyRow" initiative. This firmware powers the UNTAMED system and orchestrates sensor sampling, data logging, real-time monitoring, and efficient wireless data uplinking — optimized for low-power embedded deployment in harsh and remote environments.
+**Project UNTAMED** is an environmental and motion monitoring system developed by HardwareX Engineering for the "UNTAMED" https://untamed.team/ initiative. This firmware powers the UNTAMED system and orchestrates sensor sampling, data logging, real-time monitoring, and efficient wireless data uplinking — optimized for embedded deployment in harsh and remote environments.
 
 ---
 
@@ -26,7 +26,7 @@ This firmware runs on an **ESP32-S3 Mini** board and manages the following compo
 - Display interface showing GPS fix, battery %, system status, wind and motion
 - Accurate battery voltage and SoC calculation (with correction and curve-fitting)
 - Automatic WiFi-based log upload (when enabled)
-- Custom power optimizations (CPU throttling, radio disablement)
+- Power optimizations (CPU throttling, radio disablement)
 - RTC synchronization via GPS
 - Robust boot and I2C handling
 
@@ -99,14 +99,13 @@ Data is flushed every 2 minutes or when buffer is full. Logs are uploaded period
 
 ## 🌐 Server Uploads
 
-The system optionally uploads log snapshots and full logs to a configured backend. It sends both sensor payload and full `.log` files using HTTP with custom headers and basic authorization.
+The system optionally uploads log snapshots and full logs to a configured backend. It sends full `.log` files using HTTP with custom headers and basic authorization.
 
 ---
 
 ## 📄 Licensing
 
-This firmware is proprietary unless marked otherwise.  
-📩 *Contact HardwareX Engineering if you're interested in using or contributing to the open-source version.*
+This firmware is released under the MIT License.
 
 ---
 
