@@ -10,7 +10,7 @@ void logHeader() {
   logFile = SD.open(logFileName, FILE_APPEND);
   if (logFile) {
     logFile.println("# RobinLog Format");
-    logFile.println("# timestamp,type,data...");
+    logFile.println("# timestamp,ms,type,data...");
     logFile.println("# I: AccelX,AccelY,AccelZ,GyroX,GyroY,GyroZ,MagX,MagY,MagZ");
     logFile.println("# G: Latitude,Longitude,Speed,Course");
     logFile.println("# W: WindSpeed,WindDirection");
@@ -145,11 +145,12 @@ void logAllSensors() {
     lastIMULog = now;
 
     snprintf(line, sizeof(line),
-      "%lu,I,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.1f,%.1f,%.1f\n",
-      getCurrentTimestamp(),
+      "%lu,%lu,I,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.1f,%.1f,%.1f\n",
+      getCurrentTimestamp(), millis(),
       accel.acceleration.x, accel.acceleration.y, accel.acceleration.z,
       gyro.gyro.x, gyro.gyro.y, gyro.gyro.z,
       mag.magnetic.x, mag.magnetic.y, mag.magnetic.z);
+
     appendToLogBuffer(line);
   }
 
@@ -159,8 +160,9 @@ void logAllSensors() {
     lastWindLog = now;
 
     snprintf(line, sizeof(line),
-      "%lu,W,%.2f,%.0f\n",
-      getCurrentTimestamp(), windSpeed, windDirection);
+      "%lu,%lu,W,%.2f,%.0f\n",
+      getCurrentTimestamp(), millis(), windSpeed, windDirection);
+
     appendToLogBuffer(line);
   }
 
@@ -169,8 +171,9 @@ void logAllSensors() {
     lastGPSLog = now;
 
     snprintf(line, sizeof(line),
-      "%lu,G,%.5f,%.5f,%.2f,%.0f\n",
-      getCurrentTimestamp(), GPS.latitude, GPS.longitude, GPS.speed, GPS.angle);
+      "%lu,%lu,G,%.5f,%.5f,%.2f,%.0f\n",
+      getCurrentTimestamp(), millis(), GPS.latitude, GPS.longitude, GPS.speed, GPS.angle);
+
     appendToLogBuffer(line);
   }
 
@@ -180,7 +183,8 @@ void logAllSensors() {
     lastTempLog = now;
 
     snprintf(line, sizeof(line),
-      "%lu,T,%.1f\n", getCurrentTimestamp(), temperatureC);
+      "%lu,%lu,T,%.1f\n", getCurrentTimestamp(), millis(), temperatureC);
+
     appendToLogBuffer(line);
   }
 
