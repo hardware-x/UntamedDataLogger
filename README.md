@@ -9,7 +9,7 @@ A robust ESP32-S3-based battery-powered data logging system designed by Hardware
 - **/sourceCode**  
   Contains the full Arduino-based firmware for the ESP32-S3, including sensor drivers, logging routines, Wi-Fi upload, and display rendering logic.
 
-- **/CAD_Files**  
+- **/mountingCAD**  
   3D printable and manufacturing-ready enclosure models, mounting inserts, and internal mechanical layout designed for robustness and modular sensor attachment.
 
 - **/images**  
