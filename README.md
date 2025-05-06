@@ -36,10 +36,10 @@ A robust ESP32-S3-based battery-powered data logging system designed by Hardware
 
 ## 🛠️ Getting Started
 
-1. Connect sensors and battery as per provided CAD layout.
+1. Connect sensors and battery as per provided layout (electronics connection diagram coming soon).
 2. Flash the firmware via the **red USB-C** using the `/sourceCode` directory.
 3. Power on using the **metal pushbutton**.
-4. Ensure Wi-Fi hotspot is named `UNTAIMED` with password `UNTAIMED4` for upload to function.
+4. Ensure Wi-Fi hotspot is named `UNTAMED` with password `UNTAMED4` for upload to function.
 5. Monitor real-time readings on the OLED screen.
 
 ---
